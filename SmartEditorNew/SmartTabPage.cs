@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -115,11 +116,98 @@ namespace SmartEditorNew
             TextBox.Size = new Size(408, 436);
             TextBox.TabIndex = 0;
             TextBox.Zoom = 100;
+
+            TextBox.TextChanged += (sender, args) => {
+                TextChanged?.Invoke(sender, args);
+                IsChanged = true;
+
+                
+                HighlightText();
+            };
+
+            _currentTheme.ApplyTo(TextBox);
+            HighlightText();
         }
+
+        private void HighlightText()
+        {
+            TextBox.Range.ClearStyle(StyleIndex.All);
+            TextBox.SyntaxHighlighter.HTMLSyntaxHighlight(TextBox.Range);
+            TextBox.Range.ClearFoldingMarkers();
+
+            //find PHP fragments
+            foreach (var range in TextBox.GetRanges(@"<\?php.*?\?>", RegexOptions.Singleline))
+            {
+                foreach (var subRange in range.GetRanges(@"\?php.*?\?", RegexOptions.Singleline))
+                {
+                    //remove HTML highlighting from this fragment
+                    subRange.ClearStyle(StyleIndex.All);
+                    //do PHP highlighting
+                    TextBox.SyntaxHighlighter.PHPSyntaxHighlight(range);
+                    //TextBox.AutoCompleteBrackets = true;
+                }
+            }
+        }
+
 
         private static int IncLastNumber()
         {
             return Interlocked.Increment(ref _lastNumber);
         }
+
+        public override sealed string Text
+        {
+            get { return base.Text; }
+            set { base.Text = value; }
+        }
+
+        public void Save()
+        {
+            if (FileName.Length == 0)
+            {
+                return;
+            }
+
+            TextBox.SaveToFile(FileName, Encoding.UTF8);
+            IsChanged = false;
+        }
+
+        public void SaveAs(string newFileName)
+        {
+            FileName = newFileName;
+            if (FileName.Length == 0)
+            {
+                return;
+            }
+
+            TextBox.SaveToFile(FileName, Encoding.UTF8);
+            IsChanged = false;
+        }
+
+        public void Open(string newFileName)
+        {
+            FileName = newFileName;
+            if (FileName.Length == 0)
+            {
+                return;
+            }
+
+            TextBox.OpenFile(FileName, Encoding.UTF8);
+
+            IsChanged = false;
+        }
+
+        public void Clear()
+        {
+            FileName = "";
+            TextBox.Text = "";
+            IsChanged = false;
+        }
+
+        public void SetCurrentTheme(TextEditorTheme theme)
+        {
+            _currentTheme = theme;
+        }
+
     }
 }
