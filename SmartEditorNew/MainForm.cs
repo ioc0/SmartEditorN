@@ -12,10 +12,11 @@ namespace SmartEditorNew
 {
     public partial class MainForm : Form
     {
+        private TextEditorTheme _currentTheme = TextEditorTheme.DefaultThemes["Default"];
         public MainForm()
         {
             InitializeComponent();
-            tabControl1.TabPages.Add(SmartTabPage(""));
+            tabControl1.TabPages.Add(new SmartTabPage("",_currentTheme));
         }
 
         private void newFileToolStripMenuItem_Click(object sender, EventArgs e)
