@@ -129,7 +129,7 @@ namespace SmartEditorNew
             HighlightText();
         }
 
-        private void HighlightText()
+        public void HighlightText()
         {
             TextBox.Range.ClearStyle(StyleIndex.All);
             TextBox.SyntaxHighlighter.HTMLSyntaxHighlight(TextBox.Range);

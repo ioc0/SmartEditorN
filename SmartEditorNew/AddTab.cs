@@ -9,7 +9,7 @@ namespace SmartEditorNew
 {
     class AddTab:TabPage
     {
-        public static string name;
+       // public static string name;
 
         public AddTab()
         {

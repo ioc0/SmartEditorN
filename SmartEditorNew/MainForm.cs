@@ -15,6 +15,12 @@ namespace SmartEditorNew
         public MainForm()
         {
             InitializeComponent();
+            tabControl1.TabPages.Add(SmartTabPage(""));
+        }
+
+        private void newFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("New Item");
         }
     }
 }
