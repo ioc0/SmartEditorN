@@ -9,3 +9,14 @@ c:\users\александр\documents\visual studio 2015\Projects\SmartEditorNew
 c:\users\александр\documents\visual studio 2015\Projects\SmartEditorNew\SmartEditorNew\bin\Debug\FastColoredTextBox.xml
 c:\users\александр\documents\visual studio 2015\Projects\SmartEditorNew\SmartEditorNew\obj\Debug\SmartEditorNew.exe
 c:\users\александр\documents\visual studio 2015\Projects\SmartEditorNew\SmartEditorNew\obj\Debug\SmartEditorNew.pdb
+C:\Users\mortt\Source\Repos\SmartEditorN\SmartEditorNew\bin\Debug\SmartEditorNew.exe.config
+C:\Users\mortt\Source\Repos\SmartEditorN\SmartEditorNew\bin\Debug\SmartEditorNew.exe
+C:\Users\mortt\Source\Repos\SmartEditorN\SmartEditorNew\bin\Debug\SmartEditorNew.pdb
+C:\Users\mortt\Source\Repos\SmartEditorN\SmartEditorNew\bin\Debug\FastColoredTextBox.dll
+C:\Users\mortt\Source\Repos\SmartEditorN\SmartEditorNew\bin\Debug\FastColoredTextBox.xml
+C:\Users\mortt\Source\Repos\SmartEditorN\SmartEditorNew\obj\Debug\SmartEditorNew.csprojResolveAssemblyReference.cache
+C:\Users\mortt\Source\Repos\SmartEditorN\SmartEditorNew\obj\Debug\SmartEditorNew.MainForm.resources
+C:\Users\mortt\Source\Repos\SmartEditorN\SmartEditorNew\obj\Debug\SmartEditorNew.Properties.Resources.resources
+C:\Users\mortt\Source\Repos\SmartEditorN\SmartEditorNew\obj\Debug\SmartEditorNew.csproj.GenerateResource.Cache
+C:\Users\mortt\Source\Repos\SmartEditorN\SmartEditorNew\obj\Debug\SmartEditorNew.exe
+C:\Users\mortt\Source\Repos\SmartEditorN\SmartEditorNew\obj\Debug\SmartEditorNew.pdb
