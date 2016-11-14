@@ -17,16 +17,19 @@ namespace SmartEditorNew
         {
             InitializeComponent();
             tabControl1.TabPages.Add(new SmartTabPage("",_currentTheme));
-            themeChanger.DropDownItems.Add(new ToolStripSeparator());
+            
             foreach (var theme in TextEditorTheme.DefaultThemes)
             {
                 var item = new ToolStripMenuItem { Text = theme.Key };
+                
+                tsmiThemes.DropDownItems.Add(item);
                 item.Click += (sender, args) => {
                     _currentTheme = theme.Value;
                     ApplyCurrentTheme();
 
                 };
             }
+            
         }
 
         private void ApplyCurrentTheme()
@@ -38,7 +41,17 @@ namespace SmartEditorNew
 
         private void newFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("New Item");
+            
+        }
+
+        private void nightSkyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Add(new SmartTabPage("", _currentTheme));
         }
     }
 }
