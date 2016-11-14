@@ -17,6 +17,7 @@ namespace SmartEditorNew
     {
         private TextEditorTheme _currentTheme;
 
+
         private char[] autoCompleteBracketsList = {'(', ')', '{', '}', '[', ']', '"', '"', '\'', '\''};
 
         public char[] AutoCompleteBracketsList
@@ -71,6 +72,8 @@ namespace SmartEditorNew
             }
         }
         private readonly TableLayoutPanel _layout = new TableLayoutPanel();
+        
+
         public FastColoredTextBox TextBox { get; } = new FastColoredTextBox();
 
         public SmartTabPage(string fileName, TextEditorTheme theme)
@@ -91,7 +94,9 @@ namespace SmartEditorNew
 
         private void InitializeControl()
         {
+
             Controls.Add(_layout);
+           
             _layout.Controls.Add(TextBox);
             _layout.Dock = DockStyle.Fill;
             TextBox.AutoCompleteBracketsList = new[] { '(', ')', '{', '}', '[', ']', '\"', '\"', '\'', '\'' };

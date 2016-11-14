@@ -39,7 +39,6 @@
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.sdasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiThemes = new System.Windows.Forms.ToolStripMenuItem();
             this.selectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +50,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.themeChanger = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -85,7 +85,7 @@
             this.saveAsToolStripMenuItem,
             this.saveAllToolStripMenuItem,
             this.toolStripSeparator1,
-            this.sdasToolStripMenuItem});
+            this.toolStripMenuItem1});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
             this.fileToolStripMenuItem.Text = "File";
@@ -143,12 +143,6 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(277, 6);
             // 
-            // sdasToolStripMenuItem
-            // 
-            this.sdasToolStripMenuItem.Name = "sdasToolStripMenuItem";
-            this.sdasToolStripMenuItem.Size = new System.Drawing.Size(280, 26);
-            this.sdasToolStripMenuItem.Text = "sdas";
-            // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -160,7 +154,7 @@
             // tsmiThemes
             // 
             this.tsmiThemes.Name = "tsmiThemes";
-            this.tsmiThemes.Size = new System.Drawing.Size(181, 26);
+            this.tsmiThemes.Size = new System.Drawing.Size(135, 26);
             this.tsmiThemes.Text = "Themes";
             // 
             // selectionToolStripMenuItem
@@ -202,12 +196,15 @@
             // tabControl1
             // 
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tabControl1.Location = new System.Drawing.Point(0, 28);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(888, 619);
             this.tabControl1.TabIndex = 1;
+            this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.drawCross);
+            this.tabControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonsForTabs);
             // 
             // toolStrip1
             // 
@@ -230,6 +227,13 @@
             this.themeChanger.Name = "themeChanger";
             this.themeChanger.Size = new System.Drawing.Size(38, 28);
             this.themeChanger.Text = "toolStripDropDownButton1";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(280, 26);
+            this.toolStripMenuItem1.Text = "Exit";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // MainForm
             // 
@@ -276,7 +280,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiThemes;
         private System.Windows.Forms.ToolStripDropDownButton themeChanger;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem sdasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
 
