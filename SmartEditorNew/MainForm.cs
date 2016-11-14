@@ -31,27 +31,45 @@ namespace SmartEditorNew
             }
             
         }
-
+        //Theme applayer method
         private void ApplyCurrentTheme()
         {
             foreach (var tab in tabControl1.TabPages.OfType<SmartTabPage>()) {
                 _currentTheme.ApplyTo(tab);
             }
         }
-
-        private void newFileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void nightSkyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
+        //new Empty Tag
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
             tabControl1.TabPages.Add(new SmartTabPage("", _currentTheme));
+        }
+        //
+        private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var ofd = new OpenFileDialog
+            {
+                DefaultExt = "*.*",
+                Filter = @"All Files|*.*"
+            };
+            // Create a OpenFileDialog to request a path and file name to save to.
+            ofd.ShowDialog();
+
+            var fteTabPage = tabControl1.SelectedTab as SmartTabPage;
+
+            if (fteTabPage == null)
+            {
+                return;
+            }
+
+            if (fteTabPage.FileName.Length == 0 && !fteTabPage.IsChanged)
+            {
+                fteTabPage.Open(ofd.FileName);
+            }
+            else
+            {
+                tabControl1.TabPages.Add(new SmartTabPage(ofd.FileName, _currentTheme));
+                tabControl1.SelectedIndex = tabControl1.TabCount - 1;
+            }
         }
     }
 }
