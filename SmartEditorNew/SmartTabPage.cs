@@ -29,6 +29,37 @@ namespace SmartEditorNew
         private static int _lastNumber;
         private const string TabFormat = @"{0}{1}";
         private int CurrentNumber { get; }
+        private bool _trimmedTextInTheFrame;
+        public bool TrimmedTextInTheFrame
+        {
+            private get { return _trimmedTextInTheFrame; }
+            set { _trimmedTextInTheFrame = value;
+                Invalidate();
+            }
+        }
+        private Color _frameColor = Color.DarkRed;
+        private readonly Pen _framePen = new Pen(Color.DarkRed);
+        public Color FrameColor {
+            get { return _frameColor; }
+            set
+            {
+                _frameColor = value;
+                _framePen.Color = Color.DarkRed;
+                Invalidate();
+            }
+        }
+        private class LineYComparer : IComparer<LineInfo>
+        {
+            private readonly int _y;
+            public LineYComparer(int y)
+            {
+
+                this._y = y;
+            }
+
+        }
+
+
 
         private string _fileName;
 

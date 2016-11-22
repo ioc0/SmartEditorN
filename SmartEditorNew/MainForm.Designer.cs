@@ -39,6 +39,7 @@
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiThemes = new System.Windows.Forms.ToolStripMenuItem();
             this.selectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,8 +50,8 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.themeChanger = new System.Windows.Forms.ToolStripDropDownButton();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -125,23 +126,33 @@
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(280, 26);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
             this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(280, 26);
             this.saveAsToolStripMenuItem.Text = "Save As...";
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // saveAllToolStripMenuItem
             // 
             this.saveAllToolStripMenuItem.Name = "saveAllToolStripMenuItem";
             this.saveAllToolStripMenuItem.Size = new System.Drawing.Size(280, 26);
             this.saveAllToolStripMenuItem.Text = "Save All";
+            this.saveAllToolStripMenuItem.Click += new System.EventHandler(this.saveAllToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(277, 6);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(280, 26);
+            this.toolStripMenuItem1.Text = "Exit";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -211,7 +222,8 @@
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.themeChanger});
+            this.toolStripLabel1,
+            this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 647);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
@@ -219,21 +231,21 @@
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // themeChanger
+            // toolStripLabel1
             // 
-            this.themeChanger.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.themeChanger.Image = ((System.Drawing.Image)(resources.GetObject("themeChanger.Image")));
-            this.themeChanger.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.themeChanger.Name = "themeChanger";
-            this.themeChanger.Size = new System.Drawing.Size(38, 28);
-            this.themeChanger.Text = "toolStripDropDownButton1";
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(84, 28);
+            this.toolStripLabel1.Text = "Connection";
             // 
-            // toolStripMenuItem1
+            // toolStripButton1
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(280, 26);
-            this.toolStripMenuItem1.Text = "Exit";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // MainForm
             // 
@@ -278,9 +290,10 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmiThemes;
-        private System.Windows.Forms.ToolStripDropDownButton themeChanger;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 

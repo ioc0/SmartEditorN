@@ -12,6 +12,7 @@ namespace SmartEditorNew
 {
     public partial class MainForm : Form
     {
+        private string filename;
         private TextEditorTheme _currentTheme = TextEditorTheme.DefaultThemes["Default"];
         public MainForm()
         {
@@ -144,6 +145,26 @@ namespace SmartEditorNew
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void saveAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
